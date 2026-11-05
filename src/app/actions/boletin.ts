@@ -29,7 +29,8 @@ export async function suscribirBoletin(raw: unknown, turnstileToken?: string): P
   const email = parsed.data.email.toLowerCase();
   const token = newToken();
   const db = supabaseAdmin();
-  if (db) {
+  if (!db) return { ok: false, message: "El boletín abre muy pronto. Mientras, escríbenos por WhatsApp para recibir las fechas." };
+  {
     const { data: existing } = await db.from("suscriptores").select("estado").eq("email", email).maybeSingle();
     if (existing?.estado === "confirmado") return { ok: true, message: "Ese correo ya está suscrito. Gracias." };
     const { error } = await db.from("suscriptores").upsert(

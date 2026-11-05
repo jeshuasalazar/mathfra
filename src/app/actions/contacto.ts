@@ -34,6 +34,10 @@ export async function enviarContacto(raw: unknown, turnstileToken?: string): Pro
 
   const ipHash = createHash("sha256").update(ip).digest("hex").slice(0, 32);
   const db = supabaseAdmin();
+  // Sin base de datos ni correo, el mensaje se perdería: mejor decirlo y mandar a WhatsApp.
+  if (!db && !env.resendKey) {
+    return { ok: false, message: "Por ahora el formulario no está disponible. Escríbenos por WhatsApp y te respondemos hoy." };
+  }
   const forward = await forwardToAgent("contacto", { ...d, privacidad: true, website: undefined });
   if (db) {
     const { error } = await db.from("contactos").insert({

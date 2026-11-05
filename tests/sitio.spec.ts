@@ -72,7 +72,8 @@ test.describe("formulario de contacto", () => {
     await page.fill("#mensaje", "Me quedan seis semanas y física me cuesta.");
     await page.check("#privacidad");
     await page.getByRole("button", { name: "Enviar mensaje" }).click();
-    await expect(page.getByRole("status")).toContainText("recibimos tu mensaje");
+    // Con backend: confirmación. Sin Supabase/Resend (CI): aviso claro que manda a WhatsApp, nunca un falso «enviado».
+    await expect(page.getByRole("status").or(page.getByRole("alert")).first()).toContainText(/recibimos tu mensaje|WhatsApp/);
   });
 });
 
