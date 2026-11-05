@@ -1,0 +1,30 @@
+<!-- @dsCard group="Sitio web" viewport="1400x900" name="Inicio · celular y escritorio" subtitle="Página de inicio de ejemplo a 390 px y 1440 px" -->
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mathfra · Inicio a 390 y 1440 px</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 32px; }
+  .row { display: flex; gap: 40px; align-items: flex-start; }
+  .frame { display: grid; gap: 10px; }
+  .frame iframe { border: 3px solid var(--mf-color-border); border-radius: 16px; background: var(--mf-color-bg); box-shadow: var(--mf-shadow); }
+  .desk { width: 900px; height: 820px; overflow: hidden; border-radius: 16px; }
+  .desk iframe { width: 1440px; height: 1312px; transform: scale(0.625); transform-origin: 0 0; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="frame">
+      <p class="mf-eyebrow">Celular · 390 px</p>
+      <iframe src="../../Inicio%20Mathfra.dc.html" width="390" height="820" title="Inicio a 390 px"></iframe>
+    </div>
+    <div class="frame">
+      <p class="mf-eyebrow">Escritorio · 1440 px (al 62.5 %)</p>
+      <div class="desk"><iframe src="../../Inicio%20Mathfra.dc.html" title="Inicio a 1440 px"></iframe></div>
+    </div>
+  </div>
+</body>
+</html>

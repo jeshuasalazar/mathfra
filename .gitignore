@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# pruebas y capturas
+/test-results/
+/playwright-report/
+/shots/
+.claude/settings.local.json
+
+# fuentes de entrada
+*.zip

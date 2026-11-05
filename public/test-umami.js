@@ -1,0 +1,1 @@
+window.umami={track:function(){}};

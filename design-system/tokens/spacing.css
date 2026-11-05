@@ -1,0 +1,42 @@
+/* Espaciado en múltiplos de 4 · radios · bordes · sombras sólidas · retícula */
+:root {
+  --mf-space-1: 4px;
+  --mf-space-2: 8px;
+  --mf-space-3: 12px;
+  --mf-space-4: 16px;
+  --mf-space-5: 20px;
+  --mf-space-6: 24px;
+  --mf-space-8: 32px;
+  --mf-space-10: 40px;
+  --mf-space-12: 48px;
+  --mf-space-16: 64px;
+  --mf-space-20: 80px;
+  --mf-space-24: 96px;
+  --mf-space-32: 128px;
+
+  --mf-section-y: clamp(64px, 40px + 6vw, 128px);
+  --mf-gutter: clamp(20px, 12px + 2vw, 40px);
+  --mf-container: 1200px;
+  --mf-tap: 44px;               /* mínimo tocable */
+
+  --mf-radius-sm: 6px;
+  --mf-radius: 10px;
+  --mf-radius-lg: 16px;
+  --mf-radius-pill: 999px;
+
+  --mf-border-width: 2px;
+  --mf-border-width-strong: 3px;
+  --mf-border: var(--mf-border-width) solid var(--mf-color-border);
+  --mf-border-strong: var(--mf-border-width-strong) solid var(--mf-color-border);
+
+  /* Sombras sólidas desplazadas, sin desenfoque. Máximo 6 px. */
+  --mf-shadow-sm: 2px 2px 0 0 var(--mf-color-shadow);
+  --mf-shadow: 4px 4px 0 0 var(--mf-color-shadow);
+  --mf-shadow-lg: 6px 6px 0 0 var(--mf-color-shadow);
+  --mf-shadow-none: 0 0 0 0 var(--mf-color-shadow);
+
+  --mf-z-nav: 50;
+  --mf-z-fab: 60;
+  --mf-z-cookie: 70;
+  --mf-z-modal: 80;
+}

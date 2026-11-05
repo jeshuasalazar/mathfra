@@ -1,0 +1,31 @@
+/* Escala fluida 390 px → 1440 px. Títulos: Archivo Black. Texto: Archivo. */
+:root {
+  --mf-font-display: "Archivo Black", "Arial Black", system-ui, sans-serif;
+  --mf-font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --mf-text-display: clamp(2.625rem, 1.55rem + 4.4vw, 5.5rem);   /* 42 → 88 */
+  --mf-text-h1: clamp(2.25rem, 1.55rem + 2.9vw, 4rem);           /* 36 → 64 */
+  --mf-text-h2: clamp(1.75rem, 1.35rem + 1.65vw, 2.75rem);       /* 28 → 44 */
+  --mf-text-h3: clamp(1.25rem, 1.12rem + 0.55vw, 1.625rem);      /* 20 → 26 */
+  --mf-text-lead: clamp(1.125rem, 1.08rem + 0.2vw, 1.25rem);     /* 18 → 20 */
+  --mf-text-body: 1rem;                                          /* 16 */
+  --mf-text-small: 0.875rem;                                     /* 14 */
+  --mf-text-label: 0.8125rem;                                    /* 13, mayúsculas */
+
+  --mf-leading-display: 0.95;
+  --mf-leading-heading: 1.05;
+  --mf-leading-snug: 1.3;
+  --mf-leading-body: 1.6;
+
+  --mf-tracking-display: -0.025em;
+  --mf-tracking-heading: -0.015em;
+  --mf-tracking-body: 0;
+  --mf-tracking-label: 0.08em;
+
+  --mf-weight-regular: 400;
+  --mf-weight-medium: 500;
+  --mf-weight-semibold: 600;
+  --mf-weight-bold: 700;
+
+  --mf-measure: 62ch;  /* ancho máximo de párrafo */
+}

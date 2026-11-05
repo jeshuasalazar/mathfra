@@ -1,0 +1,43 @@
+/* Iconografía: Lucide (línea 2 px, extremos redondeados) vía CDN, pintada con currentColor por máscara.
+   Excepción única: marca de WhatsApp (Simple Icons), solo en botones de WhatsApp.
+   Uso: <span class="mf-icon mf-i-check" aria-hidden="true"></span> */
+.mf-icon {
+  --icon-size: 20px;
+  display: inline-block; flex: none;
+  width: var(--icon-size); height: var(--icon-size);
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+          mask: var(--icon) center / contain no-repeat;
+}
+.mf-icon--sm { --icon-size: 16px; }
+.mf-icon--lg { --icon-size: 24px; }
+.mf-icon--xl { --icon-size: 32px; }
+
+.mf-i-whatsapp { --icon: url("https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/whatsapp.svg"); }
+.mf-i-arrow-right { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/arrow-right.svg"); }
+.mf-i-arrow-up-right { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/arrow-up-right.svg"); }
+.mf-i-arrow-down { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/arrow-down.svg"); }
+.mf-i-check { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/check.svg"); }
+.mf-i-x { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/x.svg"); }
+.mf-i-plus { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/plus.svg"); }
+.mf-i-minus { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/minus.svg"); }
+.mf-i-chevron-down { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/chevron-down.svg"); }
+.mf-i-menu { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/menu.svg"); }
+.mf-i-sun { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/sun.svg"); }
+.mf-i-moon { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/moon.svg"); }
+.mf-i-alert { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/circle-alert.svg"); }
+.mf-i-check-circle { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/circle-check.svg"); }
+.mf-i-info { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/info.svg"); }
+.mf-i-target { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/target.svg"); }
+.mf-i-calculator { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/calculator.svg"); }
+.mf-i-flask { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/flask-conical.svg"); }
+.mf-i-atom { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/atom.svg"); }
+.mf-i-clipboard-check { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/clipboard-check.svg"); }
+.mf-i-timer { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/timer.svg"); }
+.mf-i-map-pin { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/map-pin.svg"); }
+.mf-i-calendar { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/calendar.svg"); }
+.mf-i-list-checks { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/list-checks.svg"); }
+.mf-i-settings { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/settings-2.svg"); }
+.mf-i-loader { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/loader-circle.svg"); }
+.mf-i-mail { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/mail.svg"); }
+.mf-i-quote { --icon: url("https://cdn.jsdelivr.net/npm/lucide-static@0.469.0/icons/quote.svg"); }

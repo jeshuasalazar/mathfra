@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Mathfra · Curso de ingreso ECOEMS en Santa Clara</title>
+<meta name="description" content="Curso de ingreso ECOEMS en Santa Clara. Empezamos por las áreas más difíciles del examen.">
+<link rel="stylesheet" href="styles.css">
+<style>body{margin:0} a{color:var(--mf-color-link)} a:hover{color:var(--mf-color-primary-hover)}</style>
+</helmet>
+<div style="min-height:100vh;background:var(--mf-color-bg);color:var(--mf-color-text)">
+<a class="mf-skip" href="#contenido">Saltar al contenido</a>
+
+<header class="mf-nav">
+  <div class="mf-container mf-nav__bar">
+    <a class="mf-brand" href="#" aria-label="Mathfra, inicio">Mathfra<span class="mf-brand__dot" aria-hidden="true"></span></a>
+    <nav aria-label="Principal">
+      <ul class="mf-nav__links">
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+    <button class="mf-iconbtn" type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}"><span class="{{ themeIcon }}" aria-hidden="true"></span></button>
+    <a class="mf-btn mf-btn--primary mf-btn--sm mf-nav__cta" href="{{ wa }}" target="_blank" rel="noopener"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span>Escríbenos por WhatsApp</a>
+    <button class="mf-iconbtn mf-nav__toggle" type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="menu-movil" aria-label="{{ menuLabel }}"><span class="{{ menuIcon }}" aria-hidden="true"></span></button>
+  </div>
+  <div class="mf-nav__menu" id="menu-movil" hidden="{{ menuHidden }}">
+    <div class="mf-container">
+      <ul>
+        <li><a href="#metodo" onClick="{{ closeMenu }}">Método<span class="mf-icon mf-i-arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#cursos" onClick="{{ closeMenu }}">Cursos<span class="mf-icon mf-i-arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#preguntas" onClick="{{ closeMenu }}">Preguntas<span class="mf-icon mf-i-arrow-right" aria-hidden="true"></span></a></li>
+      </ul>
+      <a class="mf-btn mf-btn--primary mf-btn--lg mf-btn--block" href="{{ wa }}" target="_blank" rel="noopener"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span>Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="mf-hero" aria-labelledby="titulo">
+    <div class="mf-container mf-hero__grid">
+      <div>
+        <p class="mf-eyebrow">Curso de ingreso ECOEMS · Santa Clara</p>
+        <h1 class="mf-hero__title" id="titulo">Tu primera opción se gana en las <span class="mf-mark mf-mark--sweep is-in" data-mark="">áreas difíciles</span>.</h1>
+        <p class="mf-lead">Empezamos por matemáticas, física y química, donde más aciertos se pierden, y cada semana te decimos qué estudiar. Tú no pierdes tiempo buscando.</p>
+        <div class="mf-hero__actions">
+          <a class="mf-btn mf-btn--primary mf-btn--lg" href="{{ wa }}" target="_blank" rel="noopener"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span>Escríbenos por WhatsApp</a>
+          <a class="mf-btn mf-btn--secondary mf-btn--lg" href="#metodo">Ver cómo funciona<span class="mf-icon mf-i-arrow-down" aria-hidden="true"></span></a>
+        </div>
+        <p class="mf-hero__note"><span class="mf-icon mf-icon--sm mf-i-timer" aria-hidden="true"></span>Te contestamos el mismo día con fechas y precios.</p>
+      </div>
+      <div class="mf-areas" role="group" aria-label="Áreas del examen ECOEMS; marcadas las que trabajamos primero">
+        <div class="mf-areas__head"><strong>Áreas del ECOEMS</strong><span class="mf-badge mf-badge--accent"><span class="mf-icon mf-i-target" aria-hidden="true"></span>Empezamos aquí</span></div>
+        <ol>
+          <li>Habilidad verbal</li>
+          <li class="is-focus">Habilidad matemática<span class="mf-icon mf-icon--sm mf-i-arrow-right" aria-hidden="true"></span></li>
+          <li>Español</li>
+          <li>Historia</li>
+          <li>Geografía</li>
+          <li>Formación cívica y ética</li>
+          <li class="is-focus">Matemáticas<span class="mf-icon mf-icon--sm mf-i-arrow-right" aria-hidden="true"></span></li>
+          <li class="is-focus">Física<span class="mf-icon mf-icon--sm mf-i-arrow-right" aria-hidden="true"></span></li>
+          <li class="is-focus">Química<span class="mf-icon mf-icon--sm mf-i-arrow-right" aria-hidden="true"></span></li>
+          <li>Biología</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="mf-section" id="metodo" aria-labelledby="t-metodo" data-reveal="">
+    <div class="mf-container" style="display:grid;gap:var(--mf-space-10);grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));align-items:start">
+      <div style="display:grid;gap:var(--mf-space-4)">
+        <p class="mf-eyebrow">Método</p>
+        <h2 class="mf-h2" id="t-metodo">Estudias primero lo que <span class="mf-mark">más pesa</span>.</h2>
+        <p class="mf-lead">No repartimos el tiempo parejo. Ponemos las horas donde más aciertos se pueden ganar.</p>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;gap:var(--mf-space-4)">
+        <li class="mf-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--mf-space-4);align-items:start">
+          <span style="font-family:var(--mf-font-display);font-size:var(--mf-text-h2);line-height:1;color:var(--mf-color-primary)">1</span>
+          <div style="display:grid;gap:var(--mf-space-2)"><h3 class="mf-h3">Diagnóstico</h3><p style="color:var(--mf-color-text-soft)">Un examen corto para ver en qué áreas pierdes más aciertos.</p></div>
+        </li>
+        <li class="mf-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--mf-space-4);align-items:start;background:var(--mf-color-accent);color:var(--mf-color-on-accent);border-color:var(--mf-ink)">
+          <span style="font-family:var(--mf-font-display);font-size:var(--mf-text-h2);line-height:1">2</span>
+          <div style="display:grid;gap:var(--mf-space-2)"><h3 class="mf-h3">Lo difícil, primero</h3><p>Habilidad matemática, matemáticas, física y química van al inicio, cuando tienes más tiempo y energía.</p></div>
+        </li>
+        <li class="mf-card" style="display:grid;grid-template-columns:auto 1fr;gap:var(--mf-space-4);align-items:start">
+          <span style="font-family:var(--mf-font-display);font-size:var(--mf-text-h2);line-height:1;color:var(--mf-color-primary)">3</span>
+          <div style="display:grid;gap:var(--mf-space-2)"><h3 class="mf-h3">Simulacros con revisión</h3><p style="color:var(--mf-color-text-soft)">Practicas con reactivos tipo ECOEMS y revisamos contigo cada error.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="mf-section" id="cursos" aria-labelledby="t-cursos" style="background:var(--mf-color-surface-2);border-block:var(--mf-border)" data-reveal="">
+    <div class="mf-container" style="display:grid;gap:var(--mf-space-10)">
+      <div style="display:grid;gap:var(--mf-space-4);max-width:720px">
+        <p class="mf-eyebrow">Cursos</p>
+        <h2 class="mf-h2" id="t-cursos">Elige según el tiempo que te queda.</h2>
+      </div>
+      <div class="mf-pricing">
+        <article class="mf-card mf-plan">
+          <h3 class="mf-h3">Intensivo</h3>
+          <p class="mf-plan__price">[$0,000] <small>[pago único]</small></p>
+          <p style="color:var(--mf-color-text-soft)">Para quien tiene pocas semanas antes del examen.</p>
+          <ul>
+            <li><span class="mf-icon mf-i-check" aria-hidden="true"></span>Solo las áreas difíciles</li>
+            <li><span class="mf-icon mf-i-check" aria-hidden="true"></span>Simulacros con revisión</li>
+          </ul>
+          <a class="mf-btn mf-btn--secondary mf-btn--block" href="{{ waIntensivo }}" target="_blank" rel="noopener">Preguntar por el intensivo</a>
+        </article>
+        <article class="mf-card mf-plan mf-plan--featured">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><h3 class="mf-h3">Completo</h3><span class="mf-badge mf-badge--primary">Recomendado</span></div>
+          <p class="mf-plan__price">[$0,000] <small>[pago único]</small></p>
+          <p style="color:var(--mf-color-text-soft)">Las 10 áreas del examen, empezando por las difíciles.</p>
+          <ul>
+            <li><span class="mf-icon mf-i-check" aria-hidden="true"></span>Diagnóstico y plan semanal</li>
+            <li><span class="mf-icon mf-i-check" aria-hidden="true"></span>Las 10 áreas, difíciles primero</li>
+            <li><span class="mf-icon mf-i-check" aria-hidden="true"></span>Simulacros con revisión</li>
+          </ul>
+          <a class="mf-btn mf-btn--primary mf-btn--block" href="{{ waCompleto }}" target="_blank" rel="noopener"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span>Preguntar por el completo</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mf-section" aria-label="Testimonio" data-reveal="">
+    <div class="mf-container" style="max-width:880px">
+      <figure class="mf-card mf-quote">
+        <span class="mf-badge mf-badge--warning" style="justify-self:start">Ejemplo · reemplazar por testimonio real con permiso</span>
+        <blockquote>«Dejé de estudiar todo a la vez. Física era donde más fallaba y fue donde más subí.»</blockquote>
+        <figcaption><span class="mf-quote__avatar" aria-hidden="true">NA</span><span><span class="mf-quote__name">[Nombre A.]</span><br><span class="mf-quote__meta">[Generación] · [Escuela donde quedó]</span></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="mf-section" id="preguntas" aria-labelledby="t-faq" style="padding-top:0" data-reveal="">
+    <div class="mf-container" style="display:grid;gap:var(--mf-space-10);grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));align-items:start">
+      <div style="display:grid;gap:var(--mf-space-4)">
+        <p class="mf-eyebrow">Preguntas</p>
+        <h2 class="mf-h2" id="t-faq">Lo que nos preguntan antes de inscribirse.</h2>
+      </div>
+      <div class="mf-faq" style="grid-column:span 1">
+        <details name="faq" open="">
+          <summary>¿Para quién es el curso?<span class="mf-icon mf-i-plus" aria-hidden="true"></span></summary>
+          <div class="mf-faq__body"><p>Para ti si estás terminando la secundaria o ya la terminaste y vas a presentar el ECOEMS para quedarte en tu primera opción.</p></div>
+        </details>
+        <details name="faq">
+          <summary>¿Por qué empezar por las áreas difíciles?<span class="mf-icon mf-i-plus" aria-hidden="true"></span></summary>
+          <div class="mf-faq__body"><p>Son las que más tiempo piden para mejorar. Si las dejas al final, llegan cuando ya no hay tiempo.</p></div>
+        </details>
+        <details name="faq">
+          <summary>¿Dónde son las clases?<span class="mf-icon mf-i-plus" aria-hidden="true"></span></summary>
+          <div class="mf-faq__body"><p>En Santa Clara. Te mandamos la ubicación exacta y los horarios por WhatsApp.</p></div>
+        </details>
+        <details name="faq">
+          <summary>¿Cuánto cuesta?<span class="mf-icon mf-i-plus" aria-hidden="true"></span></summary>
+          <div class="mf-faq__body"><p>Depende del curso. Escríbenos y te pasamos precios y fechas de inicio.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="mf-section mf-section--ink" aria-labelledby="t-cta" style="border-top:var(--mf-border-strong)">
+    <div class="mf-container" style="display:grid;gap:var(--mf-space-6);justify-items:start">
+      <h2 class="mf-h1" id="t-cta" style="max-width:16ch">Pregunta hoy, empieza por lo difícil.</h2>
+      <a class="mf-btn mf-btn--primary mf-btn--lg" href="{{ wa }}" target="_blank" rel="noopener" style="border-color:var(--mf-ink);box-shadow:4px 4px 0 0 var(--mf-color-accent)"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span>Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="mf-footer" style="border-top-color:var(--mf-color-on-secondary)">
+  <div class="mf-container">
+    <div class="mf-footer__grid">
+      <div>
+        <a class="mf-brand" href="#">Mathfra<span class="mf-brand__dot" aria-hidden="true"></span></a>
+        <p style="margin-top:12px;color:#B4C0D9;max-width:36ch">Cursos de ingreso ECOEMS en Santa Clara.</p>
+      </div>
+      <div>
+        <p class="mf-footer__title">Sitio</p>
+        <ul><li><a href="#metodo">Método</a></li><li><a href="#cursos">Cursos</a></li><li><a href="#preguntas">Preguntas</a></li></ul>
+      </div>
+      <div>
+        <p class="mf-footer__title">Contacto</p>
+        <ul><li><a href="{{ wa }}" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="#">Santa Clara</a></li></ul>
+      </div>
+    </div>
+    <div class="mf-footer__legal">
+      <span>© 2026 Mathfra</span>
+      <a href="#">Aviso de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+      <a href="#" onClick="{{ openPrefs }}">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<sc-if value="{{ showFab }}" hint-placeholder-val="{{ false }}">
+  <a class="mf-fab" href="{{ wa }}" target="_blank" rel="noopener"><span class="mf-icon mf-i-whatsapp" aria-hidden="true"></span><span class="mf-fab__label">Escríbenos</span></a>
+</sc-if>
+
+<sc-if value="{{ showBanner }}" hint-placeholder-val="{{ false }}">
+  <section class="mf-cookie" aria-label="Aviso de cookies">
+    <p><strong>Usamos cookies</strong> para que el sitio funcione y, si aceptas, para medir qué páginas se visitan. Tú decides. <a class="mf-link--inline" href="#">Más información</a></p>
+    <div class="mf-cookie__actions">
+      <button class="mf-btn mf-btn--secondary mf-btn--sm" type="button" onClick="{{ accept }}">Aceptar</button>
+      <button class="mf-btn mf-btn--secondary mf-btn--sm" type="button" onClick="{{ reject }}">Rechazar</button>
+      <button class="mf-btn mf-btn--secondary mf-btn--sm" type="button" onClick="{{ openPrefs }}">Configurar</button>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ prefsOpen }}" hint-placeholder-val="{{ false }}">
+  <div class="mf-modal-backdrop" onClick="{{ backdropClick }}">
+    <div class="mf-modal" role="dialog" aria-modal="true" aria-labelledby="ck-title">
+      <div class="mf-modal__head">
+        <h2 id="ck-title" class="mf-h3">Preferencias de cookies</h2>
+        <button class="mf-iconbtn" type="button" aria-label="Cerrar" onClick="{{ closePrefs }}" ref="{{ closeRef }}"><span class="mf-icon mf-i-x" aria-hidden="true"></span></button>
+      </div>
+      <p class="mf-small" style="color:var(--mf-color-text-soft)">Elige qué permites. Puedes cambiarlo cuando quieras desde el pie de página.</p>
+      <div class="mf-modal__list">
+        <label class="mf-check" for="ck-nec"><input type="checkbox" id="ck-nec" checked="{{ true }}" disabled="{{ true }}" readOnly="{{ true }}"><span class="mf-check__text"><strong>Necesarias</strong><small>Hacen que el sitio funcione. Siempre activas.</small></span></label>
+        <label class="mf-check" for="ck-an"><input type="checkbox" id="ck-an" checked="{{ analitica }}" onChange="{{ toggleAnalitica }}"><span class="mf-check__text"><strong>Medición</strong><small>Cuentan visitas de forma anónima para saber qué páginas sirven.</small></span></label>
+        <label class="mf-check" for="ck-mk"><input type="checkbox" id="ck-mk" checked="{{ marketing }}" onChange="{{ toggleMarketing }}"><span class="mf-check__text"><strong>Publicidad</strong><small>Miden si llegaste desde un anuncio.</small></span></label>
+      </div>
+      <div class="mf-modal__foot">
+        <button class="mf-btn mf-btn--secondary" type="button" onClick="{{ reject }}">Rechazar todo</button>
+        <button class="mf-btn mf-btn--secondary" type="button" onClick="{{ savePrefs }}">Guardar selección</button>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;auto&quot;,&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;auto&quot;,&quot;tsType&quot;:&quot;'auto'|'light'|'dark'&quot;},&quot;phone&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;520000000000&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showCookies&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { theme: 'light', menuOpen: false, consent: null, prefsOpen: false, analitica: false, marketing: false };
+  closeRef = React.createRef();
+
+  componentDidMount() {
+    let theme = this.props.theme;
+    try { theme = theme && theme !== 'auto' ? theme : (localStorage.getItem('mathfra-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); } catch (e) { theme = 'light'; }
+    let consent = null;
+    try { consent = JSON.parse(localStorage.getItem('mathfra-cookies') || 'null'); } catch (e) {}
+    if (this.props.showCookies === false) consent = consent || { shown: true };
+    this.setState({ theme, consent, analitica: !!(consent && consent.analitica), marketing: !!(consent && consent.marketing) });
+    document.documentElement.setAttribute('data-theme', theme);
+    this.onKey = (e) => { if (e.key === 'Escape') { this.setState({ prefsOpen: false, menuOpen: false }); } };
+    window.addEventListener('keydown', this.onKey);
+    const els = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+      this.io = new IntersectionObserver((ents) => ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); this.io.unobserve(en.target); } }), { threshold: 0.12 });
+      els.forEach(el => { if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add('mf-reveal'); this.io.observe(el); } });
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); this.io && this.io.disconnect(); }
+  componentDidUpdate(prevProps, prev) {
+    if (prevProps.theme !== this.props.theme && this.props.theme && this.props.theme !== 'auto') this.setState({ theme: this.props.theme });
+    if (prev.theme !== this.state.theme) document.documentElement.setAttribute('data-theme', this.state.theme);
+    if (!prev.prefsOpen && this.state.prefsOpen && this.closeRef.current) this.closeRef.current.focus();
+  }
+  save(c) {
+    const consent = { ...c, date: new Date().toISOString() };
+    try { localStorage.setItem('mathfra-cookies', JSON.stringify(consent)); } catch (e) {}
+    this.setState({ consent, prefsOpen: false, analitica: !!c.analitica, marketing: !!c.marketing });
+  }
+  renderVals() {
+    const s = this.state;
+    const phone = this.props.phone || '520000000000';
+    const msg = (t) => `https://wa.me/${phone}?text=${encodeURIComponent(t)}`;
+    const dark = s.theme === 'dark';
+    const showBanner = !s.consent && !s.prefsOpen;
+    return {
+      wa: msg('Hola, quiero información del curso de ingreso ECOEMS.'),
+      waIntensivo: msg('Hola, quiero información del curso Intensivo ECOEMS.'),
+      waCompleto: msg('Hola, quiero información del curso Completo ECOEMS.'),
+      themeLabel: dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro',
+      themeIcon: dark ? 'mf-icon mf-i-sun' : 'mf-icon mf-i-moon',
+      toggleTheme: () => { const t = dark ? 'light' : 'dark'; try { localStorage.setItem('mathfra-theme', t); } catch (e) {} this.setState({ theme: t }); },
+      menuOpen: s.menuOpen,
+      menuHidden: !s.menuOpen,
+      menuLabel: s.menuOpen ? 'Cerrar menú' : 'Abrir menú',
+      menuIcon: s.menuOpen ? 'mf-icon mf-i-x' : 'mf-icon mf-i-menu',
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      showBanner,
+      showFab: !showBanner && !s.prefsOpen && !s.menuOpen,
+      prefsOpen: s.prefsOpen,
+      openPrefs: (e) => { e && e.preventDefault && e.preventDefault(); this.setState({ prefsOpen: true }); },
+      closePrefs: () => this.setState({ prefsOpen: false }),
+      backdropClick: (e) => { if (e.target === e.currentTarget) this.setState({ prefsOpen: false }); },
+      closeRef: this.closeRef,
+      accept: () => this.save({ analitica: true, marketing: true }),
+      reject: () => this.save({ analitica: false, marketing: false }),
+      savePrefs: () => this.save({ analitica: s.analitica, marketing: s.marketing }),
+      analitica: s.analitica, marketing: s.marketing,
+      toggleAnalitica: (e) => this.setState({ analitica: e.target.checked }),
+      toggleMarketing: (e) => this.setState({ marketing: e.target.checked }),
+    };
+  }
+}
+</script>
+</body>
+</html>

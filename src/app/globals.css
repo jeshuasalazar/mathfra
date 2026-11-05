@@ -1,26 +1,115 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/mathfra.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Modo oscuro = data-theme="dark" en <html> (DESIGN.md §1) */
+@custom-variant dark (&:is([data-theme="dark"] *));
 
+/* Tema de Tailwind: solo alias de los tokens --mf-* (no se inventan valores). */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-mf-primary: var(--mf-color-primary);
+  --color-mf-primary-hover: var(--mf-color-primary-hover);
+  --color-mf-on-primary: var(--mf-color-on-primary);
+  --color-mf-secondary: var(--mf-color-secondary);
+  --color-mf-on-secondary: var(--mf-color-on-secondary);
+  --color-mf-accent: var(--mf-color-accent);
+  --color-mf-accent-soft: var(--mf-color-accent-soft);
+  --color-mf-on-accent: var(--mf-color-on-accent);
+  --color-mf-bg: var(--mf-color-bg);
+  --color-mf-surface: var(--mf-color-surface);
+  --color-mf-surface-2: var(--mf-color-surface-2);
+  --color-mf-border: var(--mf-color-border);
+  --color-mf-border-soft: var(--mf-color-border-soft);
+  --color-mf-text: var(--mf-color-text);
+  --color-mf-text-soft: var(--mf-color-text-soft);
+  --color-mf-link: var(--mf-color-link);
+  --color-mf-success: var(--mf-color-success);
+  --color-mf-warning: var(--mf-color-warning);
+  --color-mf-error: var(--mf-color-error);
+
+  /* Variables de shadcn/ui apuntando a los tokens */
+  --color-background: var(--mf-color-bg);
+  --color-foreground: var(--mf-color-text);
+  --color-card: var(--mf-color-surface);
+  --color-card-foreground: var(--mf-color-text);
+  --color-popover: var(--mf-color-surface);
+  --color-popover-foreground: var(--mf-color-text);
+  --color-primary: var(--mf-color-primary);
+  --color-primary-foreground: var(--mf-color-on-primary);
+  --color-secondary: var(--mf-color-surface);
+  --color-secondary-foreground: var(--mf-color-text);
+  --color-muted: var(--mf-color-surface-2);
+  --color-muted-foreground: var(--mf-color-text-soft);
+  --color-accent: var(--mf-color-accent);
+  --color-accent-foreground: var(--mf-color-on-accent);
+  --color-destructive: var(--mf-color-error);
+  --color-border: var(--mf-color-border);
+  --color-input: var(--mf-color-border);
+  --color-ring: var(--mf-color-focus);
+
+  --font-sans: var(--mf-font-body);
+  --font-heading: var(--mf-font-display);
+
+  --radius-sm: var(--mf-radius-sm);
+  --radius-md: var(--mf-radius);
+  --radius-lg: var(--mf-radius);
+  --radius-xl: var(--mf-radius-lg);
+  --radius-2xl: var(--mf-radius-lg);
+
+  --shadow-mf-sm: var(--mf-shadow-sm);
+  --shadow-mf: var(--mf-shadow);
+  --shadow-mf-lg: var(--mf-shadow-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* ---------- Composiciones propias del sitio (solo tokens) ---------- */
+.mf-stack { display: grid; gap: var(--mf-space-4); align-content: start; }
+.mf-split { display: grid; gap: var(--mf-space-10); grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); align-items: start; }
+@media (min-width: 1024px) { .mf-split--title { grid-template-columns: 0.85fr 1.15fr; } }
+.mf-band { background: var(--mf-color-surface-2); border-block: var(--mf-border); }
+.mf-section--tight { padding-top: 0; }
+.mf-prose { display: grid; gap: var(--mf-space-4); max-width: var(--mf-measure); }
+.mf-prose h2 { font-size: var(--mf-text-h3); line-height: var(--mf-leading-snug); margin-top: var(--mf-space-6); }
+.mf-prose h3 { font-family: var(--mf-font-body); font-weight: 700; font-size: 1.0625rem; margin-top: var(--mf-space-2); }
+.mf-prose ul, .mf-prose ol { margin: 0; padding-left: 1.25rem; display: grid; gap: var(--mf-space-2); }
+.mf-prose table { width: 100%; border-collapse: collapse; font-size: var(--mf-text-small); border: var(--mf-border); }
+.mf-prose th, .mf-prose td { text-align: left; vertical-align: top; padding: var(--mf-space-2) var(--mf-space-3); border-bottom: 2px solid var(--mf-color-border-soft); }
+.mf-prose th { background: var(--mf-color-surface-2); }
+.mf-table-wrap { overflow-x: auto; }
+.mf-pending { display: inline; background: var(--mf-color-warning-soft); border: 2px dashed var(--mf-color-warning); border-radius: var(--mf-radius-sm); padding: 0 6px; font-weight: 600; font-size: 0.95em; color: var(--mf-color-text); }
+.mf-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--mf-space-4); }
+.mf-step { display: grid; grid-template-columns: auto 1fr; gap: var(--mf-space-4); align-items: start; }
+.mf-step__n { font-family: var(--mf-font-display); font-size: var(--mf-text-h2); line-height: 1; color: var(--mf-color-primary); min-width: 1.2ch; }
+.mf-step--key { background: var(--mf-color-accent); color: var(--mf-color-on-accent); border-color: var(--mf-ink); }
+.mf-step--key .mf-step__n { color: var(--mf-color-on-accent); }
+.mf-step p { color: var(--mf-color-text-soft); }
+.mf-step--key p { color: var(--mf-color-on-accent); }
+.mf-rows { display: grid; border: var(--mf-border); border-radius: var(--mf-radius-lg); background: var(--mf-color-surface); overflow: hidden; }
+.mf-rows > * { padding: var(--mf-space-5); display: grid; gap: var(--mf-space-2); }
+.mf-rows > * + * { border-top: var(--mf-border); }
+@media (min-width: 720px) { .mf-row { grid-template-columns: 220px 1fr; gap: var(--mf-space-6); align-items: baseline; } }
+.mf-meter { display: flex; gap: 3px; flex-wrap: wrap; }
+.mf-meter i { width: 10px; height: 14px; border: 2px solid var(--mf-color-border); border-radius: 2px; background: var(--mf-color-surface); }
+.mf-meter--focus i { background: var(--mf-color-accent); border-color: var(--mf-ink); }
+.mf-subject { display: grid; gap: var(--mf-space-2); padding: var(--mf-space-4) var(--mf-space-5); }
+.mf-subject__head { display: flex; justify-content: space-between; align-items: center; gap: var(--mf-space-3); flex-wrap: wrap; }
+.mf-cta-final .mf-btn--primary { border-color: var(--mf-ink); box-shadow: 4px 4px 0 0 var(--mf-color-accent); }
+.mf-cta-final .mf-btn--primary:hover { box-shadow: 6px 6px 0 0 var(--mf-color-accent); }
+.mf-on-ink-soft { color: #B4C0D9; }
+.mf-page-head { padding-block: var(--mf-space-12) var(--mf-space-16); border-bottom: var(--mf-border); }
+.mf-page-head h1 { font-size: var(--mf-text-h1); line-height: var(--mf-leading-heading); letter-spacing: var(--mf-tracking-heading); margin: var(--mf-space-3) 0 var(--mf-space-5); max-width: 20ch; }
+.mf-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--mf-space-2); font-size: var(--mf-text-small); color: var(--mf-color-text-soft); }
+.mf-crumbs li + li::before { content: "/"; margin-right: var(--mf-space-2); }
+.mf-crumbs a { color: var(--mf-color-text-soft); }
+.mf-turnstile { min-height: 65px; }
+.mf-legal-note { margin-top: var(--mf-space-10); padding: var(--mf-space-4); border: 2px dashed var(--mf-color-warning); border-radius: var(--mf-radius); background: var(--mf-color-warning-soft); font-weight: 600; font-size: var(--mf-text-small); }
+.mf-simple-notice { font-size: var(--mf-text-small); color: var(--mf-color-text-soft); line-height: 1.5; }
+.mf-nav__links a { white-space: nowrap; }
+body[data-menu-open] [data-fab], body[data-cookie-open] [data-fab], body[data-modal-open] [data-fab] { display: none; }
+.mf-cookie-link { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: var(--mf-text-small); color: var(--mf-color-on-secondary); min-height: 44px; display: inline-flex; align-items: center; }
+.mf-cookie-link:hover { text-decoration: underline; text-decoration-color: var(--mf-color-accent); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.mf-areas__head .mf-badge { white-space: nowrap; flex: none; }
+.mf-areas__head strong { min-width: 0; }
+/* Enlace sobre banda surface-2: #1E5EFF no llega a 4.5:1; se usa el azul del mismo sistema un tono abajo. */
+:root:not([data-theme="dark"]) .mf-band .mf-link, :root:not([data-theme="dark"]) .mf-band .mf-link--inline { color: var(--mf-color-primary-hover); }
+:root:not([data-theme="dark"]) .mf-band .mf-link:hover { color: var(--mf-color-primary-active); }

@@ -1,0 +1,8 @@
+<!-- @dsCard group="Movimiento" viewport="700x260" name="Duraciones y curvas" subtitle="Sutil; todo se anula con prefers-reduced-motion" -->
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../styles.css"></head>
+<body style="padding:24px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;font:500 13px Archivo">
+<div style="display:grid;gap:6px"><strong>Duraciones</strong><span>instant 80 ms · presión</span><span>fast 140 ms · hover, color</span><span>base 220 ms · acordeón, modal</span><span>slow 420 ms · entrada de sección</span><span>mark 700 ms · barrido del marcatexto</span></div>
+<div style="display:grid;gap:6px"><strong>Curvas</strong><span>ease-out (.2,.8,.2,1) · entradas</span><span>in-out (.65,0,.35,1) · cambios de estado</span><span>snap (.3,1.3,.5,1) · palomita de casilla</span>
+<p style="margin-top:8px"><span class="mf-display" style="font-size:34px">Lo <span class="mf-mark mf-mark--sweep" id="m">difícil</span></span></p></div></div>
+<script>const m=document.getElementById('m');setInterval(()=>m.classList.toggle('is-in'),1400);m.classList.add('is-in')</script></body></html>
