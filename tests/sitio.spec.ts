@@ -77,6 +77,29 @@ test.describe("formulario de contacto", () => {
   });
 });
 
+test.describe("boletín", () => {
+  test("pide correo y consentimiento, que llega sin marcar", async ({ page }) => {
+    await rechazarCookies(page);
+    await page.goto("/");
+    const form = page.getByRole("form", { name: "Suscripción al boletín" });
+    await expect(form.locator("#nl-consent")).not.toBeChecked();
+    await form.getByRole("button", { name: "Suscribirme" }).click();
+    await expect(form.locator("#nl-email")).toHaveAttribute("aria-invalid", "true");
+    await expect(form.locator("#nl-consent")).toHaveAttribute("aria-invalid", "true");
+  });
+
+  test("con datos válidos responde sin un falso «suscrito»", async ({ page }) => {
+    await rechazarCookies(page);
+    await page.goto("/");
+    const form = page.getByRole("form", { name: "Suscripción al boletín" });
+    await form.locator("#nl-email").fill("prueba@example.com");
+    await form.locator("#nl-consent").check();
+    await form.getByRole("button", { name: "Suscribirme" }).click();
+    // Con backend: pide confirmar por correo (doble opt-in). Sin Supabase (CI): manda a WhatsApp.
+    await expect(form.getByRole("status").or(form.getByRole("alert")).first()).toContainText(/confirmar|WhatsApp/);
+  });
+});
+
 test.describe("aviso de cookies", () => {
   test("rechazar no carga analítica", async ({ page }) => {
     const pedidas: string[] = [];

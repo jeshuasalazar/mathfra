@@ -43,6 +43,10 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    // El brief de prospección cita /privacidad: lo llevamos al aviso integral.
+    return [{ source: "/privacidad", destination: "/aviso-de-privacidad", permanent: true }];
+  },
   async rewrites() {
     return [
       { source: "/index.md", destination: "/md/index" },

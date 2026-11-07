@@ -489,7 +489,14 @@ textarea.mf-input { min-height: 112px; resize: vertical; }
 .mf-cookie p { font-size: 0.9375rem; }
 /* Los tres botones: mismo componente, misma variante, mismo tamaño. */
 .mf-cookie__actions { display: grid; grid-template-columns: 1fr; gap: var(--mf-space-3); }
-@media (min-width: 560px) { .mf-cookie__actions { grid-template-columns: repeat(3, 1fr); } }
+/* En celular, compacto y en una fila: no debe tapar el botón principal de la portada. */
+@media (min-width: 360px) { .mf-cookie__actions { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 559px) {
+  .mf-cookie { padding: var(--mf-space-4); gap: var(--mf-space-3); }
+  .mf-cookie p { font-size: 0.875rem; }
+  .mf-cookie__actions { gap: var(--mf-space-2); }
+  .mf-cookie__actions .mf-btn { padding-inline: var(--mf-space-2); }
+}
 
 .mf-modal-backdrop { position: fixed; inset: 0; z-index: var(--mf-z-modal); background: var(--mf-color-overlay); display: grid; place-items: end center; padding: 0; }
 @media (min-width: 600px) { .mf-modal-backdrop { place-items: center; padding: var(--mf-space-6); } }
